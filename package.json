@@ -1,7 +1,7 @@
 {
   "name": "hapi-apn",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "Apple Push Notifications from your Hapi applications using Node APN",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/iainreid820/hapi-apn/issues"
   },
-  "homepage": "https://github.com/iainreid820/hapi-apn#readme"
+  "homepage": "https://github.com/iainreid820/hapi-apn#readme",
+  "dependencies": {
+    "apn": "^2.1.5"
+  }
 }
