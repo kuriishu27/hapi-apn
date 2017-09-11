@@ -1,6 +1,6 @@
 {
   "name": "hapi-apn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Apple Push Notifications from your Hapi applications using Node APN",
   "main": "src/index.js",
   "scripts": {
