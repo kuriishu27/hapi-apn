@@ -9,7 +9,7 @@ exports.register = function (server, options, next) {
     connection = new apn.Provider(options)
   }
   
-  connection.setMaxListeners(0)
+  connection.setMaxListeners(10000000)
 
   server.decorate('server', 'apn', {
     connection,
