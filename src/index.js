@@ -15,6 +15,8 @@ exports.register = function (server, options, next) {
     Provider: apn.Provider
   })
 
+  connection.setMaxListeners(0)
+
   next()
 }
 
