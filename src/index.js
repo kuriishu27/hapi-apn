@@ -8,6 +8,8 @@ exports.register = function (server, options, next) {
   if (options) {
     connection = new apn.Provider(options)
   }
+  
+  connection.setMaxListeners(0)
 
   server.decorate('server', 'apn', {
     connection,
@@ -15,7 +17,6 @@ exports.register = function (server, options, next) {
     Provider: apn.Provider
   })
 
-  connection.setMaxListeners(0)
 
   next()
 }
