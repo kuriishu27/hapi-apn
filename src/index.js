@@ -3,11 +3,11 @@
 const apn = require('apn')
 
 exports.plugin = {
-  async register (server, options) {
+  async register (server, pluginOptions) {
     let connection;
 
-    if (options) {
-      connection = new apn.Provider(options)
+    if (pluginOptions) {
+      connection = new apn.Provider(pluginOptions)
     }
     
     connection.setMaxListeners(10000000)
