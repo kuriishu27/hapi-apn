@@ -2,25 +2,22 @@
 
 const apn = require('apn')
 
-exports.register = function (server, options, next) {
-  let connection;
+exports.plugin = {
+  async register (server, options) {
+    let connection;
 
-  if (options) {
-    connection = new apn.Provider(options)
-  }
+    if (options) {
+      connection = new apn.Provider(options)
+    }
+    
+    connection.setMaxListeners(10000000)
   
-  connection.setMaxListeners(10000000)
-
-  server.decorate('server', 'apn', {
-    connection,
-    Notification: apn.Notification,
-    Provider: apn.Provider
-  })
-
-
-  next()
+    server.decorate('server', 'apn', {
+      connection,
+      Notification: apn.Notification,
+      Provider: apn.Provider
+    })
+  },
+  pkg: require('../package.json')
 }
 
-exports.register.attributes = {
-  name: 'hapi-apn'
-}
